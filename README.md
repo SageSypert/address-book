@@ -1,6 +1,6 @@
-# _{Application Name}_
+# Address Book
 
-#### _{Brief description of application}_
+#### Address book practice.
 
 #### By: Austin Landis
 #### By: Sage Sypert
