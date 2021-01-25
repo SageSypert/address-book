@@ -4,7 +4,13 @@ function AddressBook() {
   this.currentId = 0;
 }
 AddressBook.prototype.addContact = function(contact) {
-  this.contacts[contact.firstName] = contact;
+  contact.id = this.assignId();
+  this.contacts[contact.id] = contact;
+}
+
+AddressBook.prototype.assignId = function() {
+  this.currentId += 1;
+  return this.currentId;
 }
 
 function Contact(firstName, lastName, phoneNumber) {
@@ -13,13 +19,25 @@ function Contact(firstName, lastName, phoneNumber) {
   this.phoneNumber = phoneNumber;
 }
 
+let addressBook = new AddressBook();
 let contact1 = new Contact("Bob", "Boberson", "400-400-4000");
+let contact2 = new Contact("Ada", "Lovelace", "503-555-0100");
+let contact3 = new Contact("Grace", "Hopper", "503-555-0199");
+addressBook.addContact(contact1);
+addressBook.addContact(contact2);
+addressBook.addContact(contact3);
 
-console.log(contact1);
+console.log(addressBook);
 
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
+
+// function AddThisContact(name, lastname, phone)
+//   for(let i = 0; i <= contacts.length; i++) {
+//     let  = new Contact(name, lastname, phone);
+// }
+
 
 
 
